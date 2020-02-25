@@ -36,7 +36,7 @@
             this.MnCIMalte = new System.Windows.Forms.ToolStripMenuItem();
             this.MnCILupulo = new System.Windows.Forms.ToolStripMenuItem();
             this.MnCIFermento = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnCIAdendo = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnCIAdjuntos = new System.Windows.Forms.ToolStripMenuItem();
             this.MnCadEquipamentos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.MnSair = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +88,7 @@
             this.MnCIMalte,
             this.MnCILupulo,
             this.MnCIFermento,
-            this.MnCIAdendo});
+            this.MnCIAdjuntos});
             this.MnCadIngredientes.Image = ((System.Drawing.Image)(resources.GetObject("MnCadIngredientes.Image")));
             this.MnCadIngredientes.ImageTransparentColor = System.Drawing.Color.Black;
             this.MnCadIngredientes.Name = "MnCadIngredientes";
@@ -99,27 +99,27 @@
             // MnCIMalte
             // 
             this.MnCIMalte.Name = "MnCIMalte";
-            this.MnCIMalte.Size = new System.Drawing.Size(125, 22);
+            this.MnCIMalte.Size = new System.Drawing.Size(180, 22);
             this.MnCIMalte.Text = "&Malte";
             this.MnCIMalte.Click += new System.EventHandler(this.MnCIMalte_Click);
             // 
             // MnCILupulo
             // 
             this.MnCILupulo.Name = "MnCILupulo";
-            this.MnCILupulo.Size = new System.Drawing.Size(125, 22);
+            this.MnCILupulo.Size = new System.Drawing.Size(180, 22);
             this.MnCILupulo.Text = "&Lúpulo";
             // 
             // MnCIFermento
             // 
             this.MnCIFermento.Name = "MnCIFermento";
-            this.MnCIFermento.Size = new System.Drawing.Size(125, 22);
+            this.MnCIFermento.Size = new System.Drawing.Size(180, 22);
             this.MnCIFermento.Text = "&Fermento";
             // 
-            // MnCIAdendo
+            // MnCIAdjuntos
             // 
-            this.MnCIAdendo.Name = "MnCIAdendo";
-            this.MnCIAdendo.Size = new System.Drawing.Size(125, 22);
-            this.MnCIAdendo.Text = "&Adendo";
+            this.MnCIAdjuntos.Name = "MnCIAdjuntos";
+            this.MnCIAdjuntos.Size = new System.Drawing.Size(180, 22);
+            this.MnCIAdjuntos.Text = "&Adjuntos";
             // 
             // MnCadEquipamentos
             // 
@@ -186,7 +186,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&Sobre ... ...";
             // 
             // statusStrip
@@ -248,7 +248,7 @@
         private System.Windows.Forms.ToolStripMenuItem MnCIMalte;
         private System.Windows.Forms.ToolStripMenuItem MnCILupulo;
         private System.Windows.Forms.ToolStripMenuItem MnCIFermento;
-        private System.Windows.Forms.ToolStripMenuItem MnCIAdendo;
+        private System.Windows.Forms.ToolStripMenuItem MnCIAdjuntos;
     }
 }
 

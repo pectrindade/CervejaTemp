@@ -13,29 +13,6 @@ namespace CervejaTemp.Classes.Funcoes
 
         }
 
-        public bool CriaTb()
-        {
-
-            var db = new DBAcessOleDB();
-            var Mysql = "CREATE TABLE Contato ( ";
-            Mysql = Mysql + " ID int not null, ";
-            Mysql = Mysql + " Nome varchar(50) ";
-
-            Mysql = Mysql + ")";
-
-            db.CommandText = Mysql;
-
-            try
-            {
-                db.ExecuteNonQuery();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public bool Cria_Departamento()
         {
 
@@ -43,19 +20,20 @@ namespace CervejaTemp.Classes.Funcoes
 
             var db = new DBAcessOleDB();
 
-            var tableName = "Departamento";
+            var tableName = "malte";
 
             var Mysql = "CREATE TABLE " + tableName + "( ";
 
-            Mysql = Mysql + " [CODDEPARTAMENTO] Int, ";
+            Mysql = Mysql + " [CODMALTE] Int, ";
             Mysql = Mysql + " [NOME]  varchar(100), ";
-            Mysql = Mysql + " [TELEFONE]  varchar(50), ";
-            Mysql = Mysql + " [EMAIL]  varchar(50), ";
+            Mysql = Mysql + " [QUANTIDADE]  varchar(50), ";
+            Mysql = Mysql + " [VALOR]  varchar(50), ";
 
-            Mysql = Mysql + " [RESPINCLUSAO]  varchar(255), ";
-            Mysql = Mysql + " [DATAHORAINCLUSAO]  varchar(50), ";
-            Mysql = Mysql + " [RESPALTERACAO]  varchar(255), ";
-            Mysql = Mysql + " [DATAHORAALTERACAO]  varchar(50) ";
+            Mysql = Mysql + " [DATAFAB]  varchar(255), ";
+            Mysql = Mysql + " [DATAVENC]  varchar(50), ";
+            Mysql = Mysql + " [DATAENTRADA]  varchar(255), ";
+            Mysql = Mysql + " [EBC]  varchar(255), ";
+            Mysql = Mysql + " [OBS]  varchar(50) ";
 
             Mysql = Mysql + " )";
 

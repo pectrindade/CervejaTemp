@@ -60,6 +60,10 @@
     <Compile Include="Classes\Funcoes\CriaArquivo.cs" />
     <Compile Include="Classes\Funcoes\Funcoes.cs" />
     <Compile Include="Classes\Mysql\Acessos.cs" />
+    <Compile Include="Classes\Mysql\Lupulo.cs" />
+    <Compile Include="Classes\Mysql\Fermento.cs" />
+    <Compile Include="Classes\Mysql\Adjunto.cs" />
+    <Compile Include="Classes\Mysql\Malte.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +75,24 @@
     </Compile>
     <Compile Include="Forms\Acesso.Designer.cs">
       <DependentUpon>Acesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadAdjunto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadAdjunto.Designer.cs">
+      <DependentUpon>CadAdjunto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadFermento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadFermento.Designer.cs">
+      <DependentUpon>CadFermento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadLupulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadLupulo.Designer.cs">
+      <DependentUpon>CadLupulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CadMalte.cs">
       <SubType>Form</SubType>

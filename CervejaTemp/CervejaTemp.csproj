@@ -59,6 +59,7 @@
     <Compile Include="Classes\DAL\DBAcessOleDB.cs" />
     <Compile Include="Classes\Funcoes\CriaArquivo.cs" />
     <Compile Include="Classes\Funcoes\Funcoes.cs" />
+    <Compile Include="Classes\Mysql\Acessos.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,8 +129,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\Mysql\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

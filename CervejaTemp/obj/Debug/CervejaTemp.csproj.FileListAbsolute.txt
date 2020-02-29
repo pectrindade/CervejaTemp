@@ -12,3 +12,25 @@ D:\Projetos\c#\Winform\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.Acess
 D:\Projetos\c#\Winform\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadMalte.resources
 D:\Projetos\c#\Winform\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadUsuario.resources
 D:\Projetos\c#\Winform\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.Inicial.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.csprojAssemblyReference.cache
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Form1.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.Acesso.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadAdjunto.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadFermento.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadLupulo.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadMalte.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadUsuario.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.Inicial.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Properties.Resources.resources
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.csproj.GenerateResource.cache
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.csproj.CoreCompileInputs.cache
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.exe
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.pdb
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\CervejaTemp.exe.config
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\CervejaTemp.exe
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\CervejaTemp.pdb
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\Google.Protobuf.dll
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\BouncyCastle.Crypto.dll
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\MySql.Data.xml
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\Google.Protobuf.xml
+E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.csproj.CopyComplete

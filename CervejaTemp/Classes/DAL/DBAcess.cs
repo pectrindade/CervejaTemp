@@ -91,16 +91,16 @@ namespace CervejaTemp.Classes.DAL
                 }
             }
 
-            try
-            {
+            //try
+            //{
 
-                string fileName = Nome;
-                return fileName;
-            }
-            catch (Exception ex)
-            {
+            //    string fileName = Nome;
+            //    return fileName;
+            //}
+            //catch (Exception ex)
+            //{
                 return "";
-            }
+            //}
         }
 
         public DBAcess(CommandType tipo)

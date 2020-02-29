@@ -60,5 +60,65 @@ namespace CervejaTemp.Forms
                 tela.Show();
             }
         }
+
+        private void MnCILupulo_Click(object sender, EventArgs e)
+        {
+
+            bool open = false;
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form is CadLupulo)
+                {
+                    form.BringToFront();
+                    open = true;
+                }
+            }
+            if (!open)
+            {
+                Form tela = new CadLupulo();
+                tela.MdiParent = this;
+                tela.Show();
+            }
+        }
+
+        private void MnCIFermento_Click(object sender, EventArgs e)
+        {
+
+            bool open = false;
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form is CadFermento)
+                {
+                    form.BringToFront();
+                    open = true;
+                }
+            }
+            if (!open)
+            {
+                Form tela = new CadFermento();
+                tela.MdiParent = this;
+                tela.Show();
+            }
+        }
+
+        private void MnCIAdjuntos_Click(object sender, EventArgs e)
+        {
+
+            bool open = false;
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form is CadAdjunto)
+                {
+                    form.BringToFront();
+                    open = true;
+                }
+            }
+            if (!open)
+            {
+                Form tela = new CadAdjunto();
+                tela.MdiParent = this;
+                tela.Show();
+            }
+        }
     }
 }

@@ -108,18 +108,21 @@
             this.MnCILupulo.Name = "MnCILupulo";
             this.MnCILupulo.Size = new System.Drawing.Size(180, 22);
             this.MnCILupulo.Text = "&Lúpulo";
+            this.MnCILupulo.Click += new System.EventHandler(this.MnCILupulo_Click);
             // 
             // MnCIFermento
             // 
             this.MnCIFermento.Name = "MnCIFermento";
             this.MnCIFermento.Size = new System.Drawing.Size(180, 22);
             this.MnCIFermento.Text = "&Fermento";
+            this.MnCIFermento.Click += new System.EventHandler(this.MnCIFermento_Click);
             // 
             // MnCIAdjuntos
             // 
             this.MnCIAdjuntos.Name = "MnCIAdjuntos";
             this.MnCIAdjuntos.Size = new System.Drawing.Size(180, 22);
             this.MnCIAdjuntos.Text = "&Adjuntos";
+            this.MnCIAdjuntos.Click += new System.EventHandler(this.MnCIAdjuntos_Click);
             // 
             // MnCadEquipamentos
             // 
@@ -186,7 +189,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aboutToolStripMenuItem.Text = "&Sobre ... ...";
             // 
             // statusStrip

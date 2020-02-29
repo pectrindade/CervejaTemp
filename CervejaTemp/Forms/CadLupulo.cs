@@ -16,5 +16,10 @@ namespace CervejaTemp.Forms
         {
             InitializeComponent();
         }
+
+        private void CadLupulo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

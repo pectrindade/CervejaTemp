@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CervejaTemp</RootNamespace>
     <AssemblyName>CervejaTemp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -120,6 +121,15 @@
     <EmbeddedResource Include="Forms\Acesso.resx">
       <DependentUpon>Acesso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadAdjunto.resx">
+      <DependentUpon>CadAdjunto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadFermento.resx">
+      <DependentUpon>CadFermento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadLupulo.resx">
+      <DependentUpon>CadLupulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadMalte.resx">
       <DependentUpon>CadMalte.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +147,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

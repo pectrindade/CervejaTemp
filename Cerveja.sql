@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           5.5.30 - MySQL Community Server (GPL)
--- OS do Servidor:               Win64
--- HeidiSQL Versão:              10.1.0.5464
+-- Versão do servidor:           5.5.23 - MySQL Community Server (GPL)
+-- OS do Servidor:               Win32
+-- HeidiSQL Versão:              9.5.0.5196
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -12,6 +12,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Copiando estrutura para tabela cerveja.adjunto
+DROP TABLE IF EXISTS `adjunto`;
 CREATE TABLE IF NOT EXISTS `adjunto` (
   `CODADJUNTO` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(200) DEFAULT NULL,
@@ -30,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `adjunto` (
 /*!40000 ALTER TABLE `adjunto` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.brassagem
+DROP TABLE IF EXISTS `brassagem`;
 CREATE TABLE IF NOT EXISTS `brassagem` (
   `CODBRASSAGEM` int(11) NOT NULL AUTO_INCREMENT,
   `CODUSUARIO` int(11) DEFAULT NULL,
@@ -46,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `brassagem` (
 /*!40000 ALTER TABLE `brassagem` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.equipamento
+DROP TABLE IF EXISTS `equipamento`;
 CREATE TABLE IF NOT EXISTS `equipamento` (
   `CODEQUIPAMENTO` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(50) DEFAULT NULL,
@@ -60,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `equipamento` (
 /*!40000 ALTER TABLE `equipamento` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fermentacao
+DROP TABLE IF EXISTS `fermentacao`;
 CREATE TABLE IF NOT EXISTS `fermentacao` (
   `CODFERMENTACAO` int(11) NOT NULL AUTO_INCREMENT,
   `CODRECEITA` int(11) DEFAULT NULL,
@@ -72,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `fermentacao` (
 /*!40000 ALTER TABLE `fermentacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fermentacaorampa
+DROP TABLE IF EXISTS `fermentacaorampa`;
 CREATE TABLE IF NOT EXISTS `fermentacaorampa` (
   `CODFERMENTACAORAMPA` int(11) NOT NULL AUTO_INCREMENT,
   `CODFERMENTACAO` int(11) NOT NULL DEFAULT '0',
@@ -86,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `fermentacaorampa` (
 /*!40000 ALTER TABLE `fermentacaorampa` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fermentacao_item
+DROP TABLE IF EXISTS `fermentacao_item`;
 CREATE TABLE IF NOT EXISTS `fermentacao_item` (
   `CODFERMENTACAO` int(11) NOT NULL DEFAULT '0',
   `CODFERMENTO` int(11) DEFAULT NULL,
@@ -97,6 +103,7 @@ CREATE TABLE IF NOT EXISTS `fermentacao_item` (
 /*!40000 ALTER TABLE `fermentacao_item` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fermento
+DROP TABLE IF EXISTS `fermento`;
 CREATE TABLE IF NOT EXISTS `fermento` (
   `CODFERMENTO` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(255) DEFAULT NULL,
@@ -111,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `fermento` (
 /*!40000 ALTER TABLE `fermento` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fervura
+DROP TABLE IF EXISTS `fervura`;
 CREATE TABLE IF NOT EXISTS `fervura` (
   `CODFERVURA` int(11) NOT NULL AUTO_INCREMENT,
   `CODRECEITA` int(11) DEFAULT NULL,
@@ -124,6 +132,7 @@ CREATE TABLE IF NOT EXISTS `fervura` (
 /*!40000 ALTER TABLE `fervura` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fervura_adjunto
+DROP TABLE IF EXISTS `fervura_adjunto`;
 CREATE TABLE IF NOT EXISTS `fervura_adjunto` (
   `CODFERVURA` int(11) DEFAULT NULL,
   `CODADJUNTO` int(11) DEFAULT NULL,
@@ -136,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `fervura_adjunto` (
 /*!40000 ALTER TABLE `fervura_adjunto` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.fervura_lupulo
+DROP TABLE IF EXISTS `fervura_lupulo`;
 CREATE TABLE IF NOT EXISTS `fervura_lupulo` (
   `CODFERVURA` int(11) DEFAULT NULL,
   `CODLUPULO` int(11) DEFAULT NULL,
@@ -148,6 +158,7 @@ CREATE TABLE IF NOT EXISTS `fervura_lupulo` (
 /*!40000 ALTER TABLE `fervura_lupulo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.lupulo
+DROP TABLE IF EXISTS `lupulo`;
 CREATE TABLE IF NOT EXISTS `lupulo` (
   `CODLUPULO` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(200) DEFAULT NULL,
@@ -163,6 +174,7 @@ CREATE TABLE IF NOT EXISTS `lupulo` (
 /*!40000 ALTER TABLE `lupulo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.malte
+DROP TABLE IF EXISTS `malte`;
 CREATE TABLE IF NOT EXISTS `malte` (
   `CODMALTE` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(200) DEFAULT NULL,
@@ -183,6 +195,7 @@ INSERT INTO `malte` (`CODMALTE`, `NOME`, `QUANTIDADE`, `VALOR`, `DATAFAB`, `DATA
 /*!40000 ALTER TABLE `malte` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.maturacao
+DROP TABLE IF EXISTS `maturacao`;
 CREATE TABLE IF NOT EXISTS `maturacao` (
   `CODMATURACAO` int(11) NOT NULL AUTO_INCREMENT,
   `CODRECEITA` int(11) DEFAULT NULL,
@@ -194,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `maturacao` (
 /*!40000 ALTER TABLE `maturacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.maturacaorampa
+DROP TABLE IF EXISTS `maturacaorampa`;
 CREATE TABLE IF NOT EXISTS `maturacaorampa` (
   `CODRAMPAMATURACAO` int(11) NOT NULL AUTO_INCREMENT,
   `CODMATURACAO` int(11) DEFAULT NULL,
@@ -208,6 +222,7 @@ CREATE TABLE IF NOT EXISTS `maturacaorampa` (
 /*!40000 ALTER TABLE `maturacaorampa` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.mostura
+DROP TABLE IF EXISTS `mostura`;
 CREATE TABLE IF NOT EXISTS `mostura` (
   `CODMOSTURA` int(11) NOT NULL AUTO_INCREMENT,
   `CODRECEITA` int(11) DEFAULT NULL,
@@ -222,6 +237,7 @@ CREATE TABLE IF NOT EXISTS `mostura` (
 /*!40000 ALTER TABLE `mostura` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.mosturarampa
+DROP TABLE IF EXISTS `mosturarampa`;
 CREATE TABLE IF NOT EXISTS `mosturarampa` (
   `CODRAMPAMOSTURA` int(11) NOT NULL AUTO_INCREMENT,
   `CODMOSTURA` int(11) DEFAULT NULL,
@@ -236,6 +252,7 @@ CREATE TABLE IF NOT EXISTS `mosturarampa` (
 /*!40000 ALTER TABLE `mosturarampa` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.receita
+DROP TABLE IF EXISTS `receita`;
 CREATE TABLE IF NOT EXISTS `receita` (
   `CODRECEITA` int(11) NOT NULL AUTO_INCREMENT,
   `NOME` varchar(100) DEFAULT NULL,
@@ -251,6 +268,7 @@ CREATE TABLE IF NOT EXISTS `receita` (
 /*!40000 ALTER TABLE `receita` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.receita_adjunto
+DROP TABLE IF EXISTS `receita_adjunto`;
 CREATE TABLE IF NOT EXISTS `receita_adjunto` (
   `CODRECEITA` int(11) DEFAULT NULL,
   `CODADJUNTO` int(11) DEFAULT NULL,
@@ -262,6 +280,7 @@ CREATE TABLE IF NOT EXISTS `receita_adjunto` (
 /*!40000 ALTER TABLE `receita_adjunto` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.receita_fermento
+DROP TABLE IF EXISTS `receita_fermento`;
 CREATE TABLE IF NOT EXISTS `receita_fermento` (
   `CODRECEITA` int(11) DEFAULT NULL,
   `CODFERMENTO` int(11) DEFAULT NULL,
@@ -273,6 +292,7 @@ CREATE TABLE IF NOT EXISTS `receita_fermento` (
 /*!40000 ALTER TABLE `receita_fermento` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.receita_lupulo
+DROP TABLE IF EXISTS `receita_lupulo`;
 CREATE TABLE IF NOT EXISTS `receita_lupulo` (
   `CODRECEITA` int(11) DEFAULT NULL,
   `CODLUPULO` int(11) DEFAULT NULL,
@@ -284,6 +304,7 @@ CREATE TABLE IF NOT EXISTS `receita_lupulo` (
 /*!40000 ALTER TABLE `receita_lupulo` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.receita_malte
+DROP TABLE IF EXISTS `receita_malte`;
 CREATE TABLE IF NOT EXISTS `receita_malte` (
   `CODRECEITA` int(11) DEFAULT NULL,
   `CODMALTE` int(11) DEFAULT NULL,
@@ -295,6 +316,7 @@ CREATE TABLE IF NOT EXISTS `receita_malte` (
 /*!40000 ALTER TABLE `receita_malte` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela cerveja.usuario
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `CODUSUARIO` int(11) NOT NULL AUTO_INCREMENT,
   `LOGIN` varchar(20) DEFAULT NULL,

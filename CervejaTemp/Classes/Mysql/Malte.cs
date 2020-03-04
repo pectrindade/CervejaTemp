@@ -11,7 +11,7 @@ namespace CervejaTemp.Classes.Mysql
 
         private int Codmalte { get; set; }
         private string Nome { get; set; }
-        private int Quantidade { get; set; }
+        private string Quantidade { get; set; }
         private string Valor { get; set; }
         private string Datafab { get; set; }
         private string Datavenc { get; set; }
@@ -20,7 +20,7 @@ namespace CervejaTemp.Classes.Mysql
         private string Obs { get; set; }
 
 
-        public Malte(int codmalte, string nome, int quantidade, string valor, string datafab, string datavenc, string dataentrada, string ebc, string obs)
+        public Malte(int codmalte, string nome, string quantidade, string valor, string datafab, string datavenc, string dataentrada, string ebc, string obs)
         {
             Codmalte = codmalte;
             Nome = nome;
@@ -54,8 +54,8 @@ namespace CervejaTemp.Classes.Mysql
 
             db.AddParameter("@CODMALTE", Codmalte);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
+            db.AddParameter("@QUANTIDADE", Convert.ToDecimal(Quantidade));
+            db.AddParameter("@VALOR", Convert.ToDecimal(Valor));
             db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab)); 
             db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
             db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));
@@ -87,8 +87,8 @@ namespace CervejaTemp.Classes.Mysql
 
             db.AddParameter("@CODMALTE", Codmalte);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
+            db.AddParameter("@QUANTIDADE", Convert.ToDecimal(Quantidade));
+            db.AddParameter("@VALOR", Convert.ToDecimal(Valor));
             db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab));
             db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
             db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));

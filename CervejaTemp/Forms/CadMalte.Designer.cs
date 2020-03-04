@@ -271,16 +271,17 @@
             // 
             // btnsalvar
             // 
-            this.btnsalvar.Location = new System.Drawing.Point(80, 194);
+            this.btnsalvar.Location = new System.Drawing.Point(237, 447);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
             this.btnsalvar.TabIndex = 25;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnexclui
             // 
-            this.btnexclui.Location = new System.Drawing.Point(171, 194);
+            this.btnexclui.Location = new System.Drawing.Point(328, 447);
             this.btnexclui.Name = "btnexclui";
             this.btnexclui.Size = new System.Drawing.Size(75, 23);
             this.btnexclui.TabIndex = 26;
@@ -289,7 +290,7 @@
             // 
             // btnfecha
             // 
-            this.btnfecha.Location = new System.Drawing.Point(263, 194);
+            this.btnfecha.Location = new System.Drawing.Point(420, 447);
             this.btnfecha.Name = "btnfecha";
             this.btnfecha.Size = new System.Drawing.Size(75, 23);
             this.btnfecha.TabIndex = 27;
@@ -301,7 +302,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 443);
+            this.ClientSize = new System.Drawing.Size(771, 480);
             this.Controls.Add(this.btnfecha);
             this.Controls.Add(this.btnexclui);
             this.Controls.Add(this.btnsalvar);

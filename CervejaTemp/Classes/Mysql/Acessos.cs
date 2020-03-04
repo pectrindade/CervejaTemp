@@ -71,19 +71,16 @@ namespace CervejaTemp.Classes.Mysql
         {
         }
 
-        public static string Acessar(int codempresa, int coddepartamento, string login, string senha)
+        public static string Acessar(string login, string senha)
         {
             var db = new DBAcess();
             var Mysql = "SELECT * ";
             Mysql = Mysql + " FROM usuarios ";
-            Mysql = Mysql + " WHERE (CODEMPRESA = @CODEMPRESA) ";
-            Mysql = Mysql + "AND (LOGIN = @login) ";
+            Mysql = Mysql + " WHERE (LOGIN = @login) ";
             Mysql = Mysql + "AND (SENHA = @senha) ";
 
             db.CommandText = Mysql;
-
-            db.AddParameter("@CODEMPRESA", codempresa);
-            db.AddParameter("@coddepartamento", coddepartamento);
+                        
             db.AddParameter("@LOGIN", login);
             db.AddParameter("@SENHA", senha);
             var r = Convert.ToString(db.ExecuteScalar());

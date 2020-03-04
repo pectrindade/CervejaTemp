@@ -12,6 +12,29 @@ namespace CervejaTemp.Forms
             InitializeComponent();
         }
 
+        private void Inicial_Load(object sender, EventArgs e)
+        {
+            Acesso acesso = new Acesso();
+            acesso.ShowDialog();
+            VerificaAcesso();
+        }
+
+        private void VerificaAcesso()
+        {
+            var codigo = Usuario.Codusuario.ToString();
+            
+
+            if (codigo == "")
+            {
+                Close();
+
+            }
+                     
+
+            
+        }
+
+
         private void MnSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -36,11 +59,7 @@ namespace CervejaTemp.Forms
             }
         }
 
-        private void Inicial_Load(object sender, EventArgs e)
-        {
-            Acesso acesso = new Acesso();
-            acesso.ShowDialog();
-        }
+        
 
         private void MnFCadUsuario_Click(object sender, EventArgs e)
         {

@@ -109,16 +109,24 @@ namespace CervejaTemp.Forms
         {
 
             var hoje = DateTime.Now;
-            var descricao = txtnome.Text.Trim();
+            //var codigo = txtcodigo.Text.Trim();
+            var dtcadastro = txtdatacadastro.Text.Trim();
+            var nome = txtnome.Text.Trim();
+            var quantidade = txtquantidade.Text.Trim();
+            var preco = txtpreco.Text.Trim();
+            var dtfabricacao = txtdatafabricacao.Text.Trim();
+            var dtvencimento = txtdatavencimento.Text.Trim();
+            var ebc = txtebc.Text.Trim();
+            var obs = txtobs.Text.Trim();
 
 
             try
             {
-                //var m = new Classes.Mysql.Malte(codigo, descricao);
-                //if (novo)
-                //    m.Insert();
-                //else
-                //    m.Update();
+                var m = new Classes.Mysql.Malte(codigo, nome, quantidade, preco, dtfabricacao, dtvencimento, dtcadastro, ebc, obs);
+                if (novo)
+                    m.Insert();
+                else
+                    m.Update();
 
                 MessageBox.Show("Registro Gravado com Sucesso !");
             }
@@ -130,7 +138,7 @@ namespace CervejaTemp.Forms
             Limpatela();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnsalvar_Click(object sender, EventArgs e)
         {
             if (txtcodigo.Text.Trim() == "0")
             {
@@ -221,5 +229,7 @@ namespace CervejaTemp.Forms
         {
 
         }
+
+       
     }
 }

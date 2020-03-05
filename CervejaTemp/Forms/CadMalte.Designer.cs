@@ -58,6 +58,7 @@
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btnexclui = new System.Windows.Forms.Button();
             this.btnfecha = new System.Windows.Forms.Button();
+            this.btndesfaz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             this.txtcodigo.Location = new System.Drawing.Point(80, 9);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(71, 20);
-            this.txtcodigo.TabIndex = 4;
+            this.txtcodigo.TabIndex = 0;
             // 
             // label1
             // 
@@ -91,7 +92,7 @@
             this.txtnome.Location = new System.Drawing.Point(80, 44);
             this.txtnome.Name = "txtnome";
             this.txtnome.Size = new System.Drawing.Size(287, 20);
-            this.txtnome.TabIndex = 8;
+            this.txtnome.TabIndex = 2;
             // 
             // label3
             // 
@@ -107,7 +108,7 @@
             this.txtquantidade.Location = new System.Drawing.Point(80, 79);
             this.txtquantidade.Name = "txtquantidade";
             this.txtquantidade.Size = new System.Drawing.Size(71, 20);
-            this.txtquantidade.TabIndex = 10;
+            this.txtquantidade.TabIndex = 3;
             // 
             // label4
             // 
@@ -123,7 +124,7 @@
             this.txtpreco.Location = new System.Drawing.Point(296, 79);
             this.txtpreco.Name = "txtpreco";
             this.txtpreco.Size = new System.Drawing.Size(71, 20);
-            this.txtpreco.TabIndex = 12;
+            this.txtpreco.TabIndex = 4;
             // 
             // label5
             // 
@@ -149,7 +150,7 @@
             this.txtdatafabricacao.Mask = "99/99/9999";
             this.txtdatafabricacao.Name = "txtdatafabricacao";
             this.txtdatafabricacao.Size = new System.Drawing.Size(71, 20);
-            this.txtdatafabricacao.TabIndex = 14;
+            this.txtdatafabricacao.TabIndex = 5;
             // 
             // label7
             // 
@@ -175,7 +176,7 @@
             this.txtdatavencimento.Mask = "99/99/9999";
             this.txtdatavencimento.Name = "txtdatavencimento";
             this.txtdatavencimento.Size = new System.Drawing.Size(71, 20);
-            this.txtdatavencimento.TabIndex = 16;
+            this.txtdatavencimento.TabIndex = 6;
             // 
             // label9
             // 
@@ -191,7 +192,7 @@
             this.txtebc.Location = new System.Drawing.Point(80, 155);
             this.txtebc.Name = "txtebc";
             this.txtebc.Size = new System.Drawing.Size(71, 20);
-            this.txtebc.TabIndex = 20;
+            this.txtebc.TabIndex = 7;
             // 
             // txtobs
             // 
@@ -199,7 +200,7 @@
             this.txtobs.Multiline = true;
             this.txtobs.Name = "txtobs";
             this.txtobs.Size = new System.Drawing.Size(339, 189);
-            this.txtobs.TabIndex = 21;
+            this.txtobs.TabIndex = 8;
             // 
             // txtdatacadastro
             // 
@@ -207,7 +208,7 @@
             this.txtdatacadastro.Mask = "99/99/9999";
             this.txtdatacadastro.Name = "txtdatacadastro";
             this.txtdatacadastro.Size = new System.Drawing.Size(71, 20);
-            this.txtdatacadastro.TabIndex = 22;
+            this.txtdatacadastro.TabIndex = 1;
             // 
             // label10
             // 
@@ -233,6 +234,7 @@
             this.Grid.Name = "Grid";
             this.Grid.Size = new System.Drawing.Size(744, 209);
             this.Grid.TabIndex = 24;
+            this.Grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellDoubleClick);
             // 
             // codigo
             // 
@@ -271,17 +273,17 @@
             // 
             // btnsalvar
             // 
-            this.btnsalvar.Location = new System.Drawing.Point(237, 447);
+            this.btnsalvar.Location = new System.Drawing.Point(188, 445);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnsalvar.TabIndex = 25;
+            this.btnsalvar.TabIndex = 9;
             this.btnsalvar.Text = "Salvar";
             this.btnsalvar.UseVisualStyleBackColor = true;
             this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
             // 
             // btnexclui
             // 
-            this.btnexclui.Location = new System.Drawing.Point(328, 447);
+            this.btnexclui.Location = new System.Drawing.Point(279, 445);
             this.btnexclui.Name = "btnexclui";
             this.btnexclui.Size = new System.Drawing.Size(75, 23);
             this.btnexclui.TabIndex = 26;
@@ -290,7 +292,7 @@
             // 
             // btnfecha
             // 
-            this.btnfecha.Location = new System.Drawing.Point(420, 447);
+            this.btnfecha.Location = new System.Drawing.Point(441, 445);
             this.btnfecha.Name = "btnfecha";
             this.btnfecha.Size = new System.Drawing.Size(75, 23);
             this.btnfecha.TabIndex = 27;
@@ -298,11 +300,22 @@
             this.btnfecha.UseVisualStyleBackColor = true;
             this.btnfecha.Click += new System.EventHandler(this.btnfecha_Click);
             // 
+            // btndesfaz
+            // 
+            this.btndesfaz.Location = new System.Drawing.Point(360, 445);
+            this.btndesfaz.Name = "btndesfaz";
+            this.btndesfaz.Size = new System.Drawing.Size(75, 23);
+            this.btndesfaz.TabIndex = 28;
+            this.btndesfaz.Text = "Desfaz";
+            this.btndesfaz.UseVisualStyleBackColor = true;
+            this.btndesfaz.Click += new System.EventHandler(this.btndesfaz_Click);
+            // 
             // CadMalte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 480);
+            this.Controls.Add(this.btndesfaz);
             this.Controls.Add(this.btnfecha);
             this.Controls.Add(this.btnexclui);
             this.Controls.Add(this.btnsalvar);
@@ -326,9 +339,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtcodigo);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "CadMalte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadMalte";
+            this.Load += new System.EventHandler(this.CadMalte_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CadMalte_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -367,5 +383,6 @@
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.Button btnexclui;
         private System.Windows.Forms.Button btnfecha;
+        private System.Windows.Forms.Button btndesfaz;
     }
 }

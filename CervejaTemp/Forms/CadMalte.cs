@@ -35,16 +35,16 @@ namespace CervejaTemp.Forms
 
         private void CadMalte_Load(object sender, EventArgs e)
         {
-            BuscaCadMalte();
+            BuscaGrid();
 
 
         }
 
-        private void BuscaCadMalte()
+        private void BuscaGrid()
         {
 
             //define um array de strings com nCOlunas
-            string[] linhaDados = new string[2];
+            string[] linhaDados = new string[7];
 
             //LIMPAR GRID
             Grid.Rows.Clear();
@@ -56,9 +56,13 @@ namespace CervejaTemp.Forms
             {
                 while (dr.Read())
                 {
-
-                    linhaDados[0] = dr.GetString(dr.GetOrdinal("CODCadMalte"));
-                    linhaDados[1] = dr.GetString(dr.GetOrdinal("DESCRICAO"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("CODMALTE"))) { linhaDados[0] = dr.GetString(dr.GetOrdinal("CODMALTE")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("NOME"))) { linhaDados[1] = dr.GetString(dr.GetOrdinal("NOME")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("QUANTIDADE"))) { linhaDados[2] = dr.GetString(dr.GetOrdinal("QUANTIDADE")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("EBC"))) { linhaDados[3] = dr.GetString(dr.GetOrdinal("EBC")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("OBS"))) { linhaDados[4] = dr.GetString(dr.GetOrdinal("OBS")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("DATAFAB"))) { linhaDados[5] = dr.GetString(dr.GetOrdinal("DATAFAB")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("DATAVENC"))) { linhaDados[6] = dr.GetString(dr.GetOrdinal("DATAVENC")); }
 
                     Grid.Rows.Add(linhaDados);
                 }
@@ -70,39 +74,42 @@ namespace CervejaTemp.Forms
 
         }
 
-        private void Grid_CadMalte_DoubleClick(object sender, EventArgs e)
-        {
-            var RowsIndex = Grid.CurrentRow.Index;
-
-            try
-            {
-                //txtCodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
-                //txtnome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void Grid_CadMalte_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnDesfaz_Click(object sender, EventArgs e)
+        private void btndesfaz_Click(object sender, EventArgs e)
         {
             Limpatela();
         }
 
         private void Limpatela()
         {
-            //txtCodigo.Text = "0";
-            //txtnome.Text = "";
+            txtcodigo.Text = "0";
 
-            //BuscaCadMalte();
-            //txtnome.Focus();
+            txtdatacadastro.Text = "__/__/____";
+            txtnome.Text = "";
+            txtquantidade.Text = "";
+            txtpreco.Text = "";
+            txtdatafabricacao.Text = "__/__/____";
+            txtdatavencimento.Text = "__/__/____";
+            txtebc.Text = "";
+            txtobs.Text = "";
 
+            txtnome.Focus();
+
+        }
+
+        private void btnsalvar_Click(object sender, EventArgs e)
+        {
+            if (txtcodigo.Text.Trim() == "0")
+            {
+
+                Gravar(true, 0);
+
+            }
+            else
+            {
+
+                Gravar(false, int.Parse(txtcodigo.Text.Trim()));
+
+            }
         }
 
         private void Gravar(bool novo, int codigo)
@@ -138,22 +145,6 @@ namespace CervejaTemp.Forms
             Limpatela();
         }
 
-        private void btnsalvar_Click(object sender, EventArgs e)
-        {
-            if (txtcodigo.Text.Trim() == "0")
-            {
-
-                Gravar(true, 0);
-
-            }
-            else
-            {
-
-                Gravar(false, int.Parse(txtcodigo.Text.Trim()));
-
-            }
-        }
-
         private void Grid_DoubleClick(object sender, EventArgs e)
         {
             var RowsIndex = Grid.CurrentRow.Index;
@@ -161,12 +152,17 @@ namespace CervejaTemp.Forms
             try
             {
                 txtcodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
-                txtnome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
+                //txtnome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
             }
             catch
             {
 
             }
+        }
+       
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Relatorio();
         }
 
         private void Relatorio()
@@ -220,16 +216,24 @@ namespace CervejaTemp.Forms
 
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-            Relatorio();
-        }
-
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var RowsIndex = Grid.CurrentRow.Index;
+
+            try
+            {
+                txtcodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
+                //txtnome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

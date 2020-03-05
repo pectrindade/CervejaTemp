@@ -182,8 +182,11 @@ namespace CervejaTemp.Classes.Mysql
         public static MySqlDataReader Select()
         {
             var db = new DBAcess();
-            var Mysql = " SELECT * ";
-            Mysql = Mysql + " FROM malte ";
+            var Mysql = " SELECT M.CODMALTE, M.NOME, M.QUANTIDADE, M.VALOR, DATE_FORMAT(M.DATAFAB,'%d/%m/%Y') AS DATAFAB, ";
+            Mysql = Mysql + " DATE_FORMAT(M.DATAVENC,'%d/%m/%Y') AS DATAVENC, DATE_FORMAT(M.DATAENTRADA,'%d/%m/%Y') AS DATAENTRADA, ";
+            Mysql = Mysql + " M.EBC, M.OBS ";
+
+            Mysql = Mysql + " FROM malte M ";
             db.CommandText = Mysql;
 
             var dr = (MySqlDataReader)db.ExecuteReader();

@@ -1,4 +1,5 @@
 ﻿using CervejaTemp.Classes.DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.ComponentModel;
 
@@ -8,28 +9,22 @@ namespace CervejaTemp.Classes.Mysql
     public class Lupulo
     {
 
-        private int CodLupulo { get; set; }
+        private int Codlupulo { get; set; }
         private string Nome { get; set; }
-        private int Quantidade { get; set; }
-        private string Valor { get; set; }
-        private string Datafab { get; set; }
-        private string Datavenc { get; set; }
-        private string Dataentrada { get; set; }
-        private string Ebc { get; set; }
-        private string Obs { get; set; }
+        private string Tipolupulo { get; set; }
+        private string Alfaacido { get; set; }
+        private string Vencimento { get; set; }
+        private string Quantidadeestoque { get; set; }
 
 
-        public Lupulo(int codLupulo, string nome, int quantidade, string valor, string datafab, string datavenc, string dataentrada, string ebc, string obs)
+        public Lupulo(int codlupulo, string nome, string tipolupulo, string alfaacido, string vencimento, string quantidadeestoque)
         {
-            CodLupulo = codLupulo;
+            Codlupulo = codlupulo;
             Nome = nome;
-            Quantidade = quantidade;
-            Valor = valor;
-            Datafab = datafab;
-            Datavenc = datavenc;
-            Dataentrada = dataentrada;
-            Ebc = ebc;
-            Obs = obs;
+            Tipolupulo = tipolupulo;
+            Alfaacido = alfaacido;
+            Vencimento = vencimento;
+            Quantidadeestoque = quantidadeestoque;
 
         }
 
@@ -37,25 +32,23 @@ namespace CervejaTemp.Classes.Mysql
         {
             var db = new DBAcess();
             var Mysql = " INSERT INTO Lupulo(";
-            Mysql = Mysql + " NOME, QUANTIDADE, VALOR, DATAFAB, DATAVENC, DATAENTRADA, EBC, OBS ";
+            Mysql = Mysql + " NOME, TIPOLUPULO, ALFAACIDO, VENCIMENTO, QUANTIDADEESTOQUE ";
             Mysql = Mysql + ") ";
 
             Mysql = Mysql + " VALUES(";
-            Mysql = Mysql + " @NOME, @QUANTIDADE, @VALOR, @DATAFAB, @DATAVENC, @DATAENTRADA, @EBC, @OBS";
+            Mysql = Mysql + " @NOME, @TIPOLUPULO, @ALFAACIDO, @VENCIMENTO, @QUANTIDADEESTOQUE ";
             Mysql = Mysql + "); ";
 
             db.CommandText = Mysql;
 
-            db.AddParameter("@CODLupulo", CodLupulo);
+            db.AddParameter("@CODLUPULO", Codlupulo);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
-            db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab)); 
-            db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
-            db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));
-            db.AddParameter("@EBC", Ebc);
-            db.AddParameter("@OBS", Obs);
-                                            
+            db.AddParameter("@TIPOLUPULO", Tipolupulo);
+            db.AddParameter("@ALFAACIDO", Convert.ToDecimal(Alfaacido));
+            db.AddParameter("@VENCIMENTO", Convert.ToDateTime(Vencimento));
+            db.AddParameter("@QUANTIDADEESTOQUE", Convert.ToDecimal(Quantidadeestoque));
+
+
 
             try
             {
@@ -72,22 +65,19 @@ namespace CervejaTemp.Classes.Mysql
             var db = new DBAcess();
             var Mysql = " UPDATE Lupulo ";
             Mysql = Mysql + " SET";
-            Mysql = Mysql + " NOME = @NOME, QUANTIDADE = @QUANTIDADE, VALOR = @VALOR, DATAFAB = @DATAFAB, DATAVENC = @DATAVENC, ";
-            Mysql = Mysql + " DATAENTRADA = @DATAENTRADA, EBC = @EBC, OBS = @OBS";
+            Mysql = Mysql + " NOME = @NOME, TIPOLUPULO = @TIPOLUPULO, ALFAACIDO = @ALFAACIDO, VENCIMENTO = @VENCIMENTO, QUANTIDADEESTOQUE = @QUANTIDADEESTOQUE ";
 
-            Mysql = Mysql = " WHERE CODLupulo = @CODLupulo";
+            Mysql = Mysql + " WHERE CODLUPULO = @CODLUPULO";
 
             db.CommandText = Mysql;
 
-            db.AddParameter("@CODLupulo", CodLupulo);
+            db.AddParameter("@CODLUPULO", Codlupulo);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
-            db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab));
-            db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
-            db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));
-            db.AddParameter("@EBC", Ebc);
-            db.AddParameter("@OBS", Obs);
+            db.AddParameter("@TIPOLUPULO", Tipolupulo);
+            db.AddParameter("@ALFAACIDO", Convert.ToDecimal(Alfaacido));
+            db.AddParameter("@VENCIMENTO", Convert.ToDateTime(Vencimento));
+            db.AddParameter("@QUANTIDADEESTOQUE", Convert.ToDecimal(Quantidadeestoque));
+
 
 
             try
@@ -100,6 +90,53 @@ namespace CervejaTemp.Classes.Mysql
                 db.Dispose();
             }
         }
+
+        public static bool Delete(int codlupulo)
+        {
+            var db = new DBAcess();
+            const string delete = " DELETE FROM Lupulo ";
+            const string where = "WHERE CODLUPULO = @CODLUPULO";
+            db.CommandText = delete + where;
+            db.AddParameter("@CODLUPULO", codlupulo);
+            try
+            {
+                db.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static MySqlDataReader Select()
+        {
+            var db = new DBAcess();
+            var Mysql = " SELECT L.CODLUPULO, L.NOME, L.TIPOLUPULO, L.ALFAACIDO, DATE_FORMAT(L.VENCIMENTO,'%d/%m/%Y') AS DATAVENC, L.QUANTIDADEESTOQUE ";
+            Mysql = Mysql + " FROM lupulo L ";
+
+            db.CommandText = Mysql;
+
+            var dr = (MySqlDataReader)db.ExecuteReader();
+            return dr;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static MySqlDataReader Select(int codlupulo)
+        {
+            var db = new DBAcess();
+            var Mysql = " SELECT L.CODLUPULO, L.NOME, L.TIPOLUPULO, L.ALFAACIDO, DATE_FORMAT(L.VENCIMENTO,'%d/%m/%Y') AS DATAVENC, L.QUANTIDADEESTOQUE ";
+            Mysql = Mysql + " FROM lupulo L ";
+            Mysql = Mysql + " WHERE CODLUPULO = @CODLUPULO ";
+
+            db.CommandText = Mysql;
+            db.AddParameter("@CODLUPULO", codlupulo);
+
+            var dr = (MySqlDataReader)db.ExecuteReader();
+            return dr;
+        }
+
 
 
     }

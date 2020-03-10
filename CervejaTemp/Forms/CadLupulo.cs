@@ -27,7 +27,7 @@ namespace CervejaTemp.Forms
             Close();
         }
 
-        private void Lupulo_KeyPress(object sender, KeyPressEventArgs e)
+        private void CadLupulo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar.CompareTo((char)Keys.Return)) == 0)
             {
@@ -37,27 +37,29 @@ namespace CervejaTemp.Forms
             }
         }
 
-       
-
         private void BuscaLupulo()
         {
 
             //define um array de strings com nCOlunas
-            string[] linhaDados = new string[2];
+            string[] linhaDados = new string[6];
 
             //LIMPAR GRID
             Grid.Rows.Clear();
             Grid.Refresh();
 
-            var dr = Classes.Mysql.Lupulo.S
+            var dr = Classes.Mysql.Lupulo.Select();
 
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
 
-                    linhaDados[0] = dr.GetString(dr.GetOrdinal("CODLupulo"));
-                    linhaDados[1] = dr.GetString(dr.GetOrdinal("DESCRICAO"));
+                    if (!dr.IsDBNull(dr.GetOrdinal("CODLUPULO"))) { linhaDados[0] = dr.GetString(dr.GetOrdinal("CODLUPULO")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("NOME"))) { linhaDados[1] = dr.GetString(dr.GetOrdinal("NOME")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("TIPOLUPULO"))) { linhaDados[2] = dr.GetString(dr.GetOrdinal("TIPOLUPULO")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("ALFAACIDO"))) { linhaDados[3] = dr.GetString(dr.GetOrdinal("ALFAACIDO")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("DATAVENC"))) { linhaDados[4] = dr.GetString(dr.GetOrdinal("DATAVENC")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("QUANTIDADEESTOQUE"))) { linhaDados[5] = dr.GetString(dr.GetOrdinal("QUANTIDADEESTOQUE")); }
 
                     Grid.Rows.Add(linhaDados);
                 }
@@ -69,26 +71,6 @@ namespace CervejaTemp.Forms
 
         }
 
-        private void Grid_Lupulo_DoubleClick(object sender, EventArgs e)
-        {
-            var RowsIndex = Grid.CurrentRow.Index;
-
-            try
-            {
-                txtCodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
-                txtDescricao.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void Grid_Lupulo_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnDesfaz_Click(object sender, EventArgs e)
         {
             Limpatela();
@@ -97,10 +79,14 @@ namespace CervejaTemp.Forms
         private void Limpatela()
         {
             txtCodigo.Text = "0";
-            txtDescricao.Text = "";
+            txtNome.Text = "";
+            txtTipo.Text = "";
+            txtAlfaacido.Text = "";
+            txtdatavencimento.Text = "";
+            txtQuantidade.Text = "";
 
             BuscaLupulo();
-            txtDescricao.Focus();
+            txtNome.Focus();
 
         }
 
@@ -108,13 +94,17 @@ namespace CervejaTemp.Forms
         {
 
             var hoje = DateTime.Now;
-
-            var descricao = txtDescricao.Text.Trim();
+            //codigo = int.Parse(txtCodigo.Text.Trim());
+            var Nome = txtNome.Text.Trim();
+            var Tipo = txtTipo.Text.Trim();
+            var AlfaAcido = txtAlfaacido.Text.Trim();
+            var vencimento = txtdatavencimento.Text.Trim();
+            var Quantidade = txtQuantidade.Text.Trim();
 
 
             try
             {
-                var m = new Classes.Mysql.Lupulo(codigo, descricao);
+                var m = new Classes.Mysql.Lupulo(codigo, Nome, Tipo, AlfaAcido, vencimento, Quantidade);
                 if (novo)
                     m.Insert();
                 else
@@ -153,12 +143,13 @@ namespace CervejaTemp.Forms
             try
             {
                 txtCodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
-                txtDescricao.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
+                txtNome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
             }
             catch
             {
 
             }
         }
+                
     }
 }

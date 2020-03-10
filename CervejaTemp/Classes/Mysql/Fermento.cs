@@ -1,4 +1,5 @@
 ﻿using CervejaTemp.Classes.DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.ComponentModel;
 
@@ -8,28 +9,25 @@ namespace CervejaTemp.Classes.Mysql
     public class Fermento
     {
 
-        private int CodFermento { get; set; }
+        private int Codfermento { get; set; }
         private string Nome { get; set; }
-        private int Quantidade { get; set; }
-        private string Valor { get; set; }
-        private string Datafab { get; set; }
-        private string Datavenc { get; set; }
-        private string Dataentrada { get; set; }
-        private string Ebc { get; set; }
-        private string Obs { get; set; }
+        private string Estilofermento { get; set; }
+        private string Vencimento { get; set; }
+        private string Quantidadeestoque { get; set; }
 
 
-        public Fermento(int codFermento, string nome, int quantidade, string valor, string datafab, string datavenc, string dataentrada, string ebc, string obs)
+        public Fermento(int codfermento, string nome, string estilofermento, string vencimento, string quantidadeestoque)
         {
-            CodFermento = codFermento;
+            Codfermento = codfermento;
             Nome = nome;
-            Quantidade = quantidade;
-            Valor = valor;
-            Datafab = datafab;
-            Datavenc = datavenc;
-            Dataentrada = dataentrada;
-            Ebc = ebc;
-            Obs = obs;
+            Estilofermento = estilofermento;
+            Vencimento = vencimento;
+            Quantidadeestoque = quantidadeestoque;
+
+        }
+
+        public Fermento()
+        {
 
         }
 
@@ -37,25 +35,20 @@ namespace CervejaTemp.Classes.Mysql
         {
             var db = new DBAcess();
             var Mysql = " INSERT INTO Fermento(";
-            Mysql = Mysql + " NOME, QUANTIDADE, VALOR, DATAFAB, DATAVENC, DATAENTRADA, EBC, OBS ";
+            Mysql = Mysql + " NOME, ESTILOFERMENTO, VENCIMENTO, QUANTIDADEESTOQUE ";
             Mysql = Mysql + ") ";
 
             Mysql = Mysql + " VALUES(";
-            Mysql = Mysql + " @NOME, @QUANTIDADE, @VALOR, @DATAFAB, @DATAVENC, @DATAENTRADA, @EBC, @OBS";
+            Mysql = Mysql + " @NOME, @ESTILOFERMENTO, @VENCIMENTO, @QUANTIDADEESTOQUE ";
             Mysql = Mysql + "); ";
 
             db.CommandText = Mysql;
 
-            db.AddParameter("@CODFermento", CodFermento);
+            db.AddParameter("@CODFERMENTO", Codfermento);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
-            db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab)); 
-            db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
-            db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));
-            db.AddParameter("@EBC", Ebc);
-            db.AddParameter("@OBS", Obs);
-                                            
+            db.AddParameter("@ESTILOFERMENTO", Estilofermento);
+            db.AddParameter("@VENCIMENTO", Convert.ToDateTime(Vencimento));
+            db.AddParameter("@QUANTIDADEESTOQUE", Convert.ToDecimal(Quantidadeestoque));
 
             try
             {
@@ -72,22 +65,18 @@ namespace CervejaTemp.Classes.Mysql
             var db = new DBAcess();
             var Mysql = " UPDATE Fermento ";
             Mysql = Mysql + " SET";
-            Mysql = Mysql + " NOME = @NOME, QUANTIDADE = @QUANTIDADE, VALOR = @VALOR, DATAFAB = @DATAFAB, DATAVENC = @DATAVENC, ";
-            Mysql = Mysql + " DATAENTRADA = @DATAENTRADA, EBC = @EBC, OBS = @OBS";
+            Mysql = Mysql + " NOME = @NOME, ESTILOFERMENTO = @ESTILOFERMENTO, VENCIMENTO = @VENCIMENTO, QUANTIDADEESTOQUE = @QUANTIDADEESTOQUE ";
+           
 
-            Mysql = Mysql = " WHERE CODFermento = @CODFermento";
+            Mysql = Mysql = " WHERE CODFERMENTO = @CODFERMENTO";
 
             db.CommandText = Mysql;
 
-            db.AddParameter("@CODFermento", CodFermento);
+            db.AddParameter("@CODFERMENTO", Codfermento);
             db.AddParameter("@NOME", Nome);
-            db.AddParameter("@QUANTIDADE", Quantidade);
-            db.AddParameter("@VALOR", Valor);
-            db.AddParameter("@DATAFAB", Convert.ToDateTime(Datafab));
-            db.AddParameter("@DATAVENC", Convert.ToDateTime(Datavenc));
-            db.AddParameter("@DATAENTRADA", Convert.ToDateTime(Dataentrada));
-            db.AddParameter("@EBC", Ebc);
-            db.AddParameter("@OBS", Obs);
+            db.AddParameter("@ESTILOFERMENTO", Estilofermento);
+            db.AddParameter("@VENCIMENTO", Convert.ToDateTime(Vencimento));
+            db.AddParameter("@QUANTIDADEESTOQUE", Convert.ToDecimal(Quantidadeestoque));
 
 
             try
@@ -100,5 +89,52 @@ namespace CervejaTemp.Classes.Mysql
                 db.Dispose();
             }
         }
+
+        public static bool Delete(int Codfermento)
+        {
+            var db = new DBAcess();
+            const string delete = " DELETE FROM Fermento ";
+            const string where = "WHERE CODFERMENTO = @CODFERMENTO";
+            db.CommandText = delete + where;
+            db.AddParameter("@CODFERMENTO", Codfermento);
+            try
+            {
+                db.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static MySqlDataReader Select()
+        {
+            var db = new DBAcess();
+            var Mysql = " SELECT F.CODFERMENTO, F.NOME, F.ESTILOFERMENTO,  DATE_FORMAT(F.VENCIMENTO,'%d/%m/%Y') AS DATAVENC, F.QUANTIDADEESTOQUE ";
+            Mysql = Mysql + " FROM fermento F ";
+
+            db.CommandText = Mysql;
+
+            var dr = (MySqlDataReader)db.ExecuteReader();
+            return dr;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public static MySqlDataReader Select(int Codfermento)
+        {
+            var db = new DBAcess();
+            var Mysql = " SELECT F.CODFERMENTO, F.NOME, F.ESTILOFERMENTO,  DATE_FORMAT(F.VENCIMENTO,'%d/%m/%Y') AS DATAVENC, F.QUANTIDADEESTOQUE ";
+            Mysql = Mysql + "FROM fermento F ";
+            Mysql = Mysql + " WHERE CODFERMENTO = @CODFERMENTO ";
+
+            db.CommandText = Mysql;
+            db.AddParameter("@CODFERMENTO", Codfermento);
+
+            var dr = (MySqlDataReader)db.ExecuteReader();
+            return dr;
+        }
+
     }
 }

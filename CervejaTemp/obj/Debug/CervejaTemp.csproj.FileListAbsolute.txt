@@ -34,3 +34,25 @@ E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\BouncyCastle.Crypto.dl
 E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\MySql.Data.xml
 E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\bin\Debug\Google.Protobuf.xml
 E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.csproj.CopyComplete
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\CervejaTemp.exe.config
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\CervejaTemp.exe
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\CervejaTemp.pdb
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\Google.Protobuf.dll
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\BouncyCastle.Crypto.dll
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\MySql.Data.xml
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\bin\Debug\Google.Protobuf.xml
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.csprojAssemblyReference.cache
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Form1.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.Acesso.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadAdjunto.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadFermento.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadLupulo.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadMalte.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadUsuario.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.Inicial.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Properties.Resources.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.csproj.GenerateResource.cache
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.csproj.CoreCompileInputs.cache
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.csproj.CopyComplete
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.exe
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.pdb

@@ -81,7 +81,7 @@ namespace CervejaTemp.Classes.Mysql
             Mysql = Mysql + " NOME = @NOME, QUANTIDADE = @QUANTIDADE, VALOR = @VALOR, DATAFAB = @DATAFAB, DATAVENC = @DATAVENC, ";
             Mysql = Mysql + " DATAENTRADA = @DATAENTRADA, EBC = @EBC, OBS = @OBS";
 
-            Mysql = Mysql = " WHERE CODMALTE = @CODMALTE";
+            Mysql = Mysql + " WHERE CODMALTE = @CODMALTE";
 
             db.CommandText = Mysql;
 

@@ -48,6 +48,10 @@
             this.txtdatacadastro = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.btnsalvar = new System.Windows.Forms.Button();
+            this.btnexclui = new System.Windows.Forms.Button();
+            this.btnfecha = new System.Windows.Forms.Button();
+            this.btndesfaz = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +59,6 @@
             this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fabricação = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnsalvar = new System.Windows.Forms.Button();
-            this.btnexclui = new System.Windows.Forms.Button();
-            this.btnfecha = new System.Windows.Forms.Button();
-            this.btndesfaz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(71, 20);
             this.txtcodigo.TabIndex = 0;
+            this.txtcodigo.Leave += new System.EventHandler(this.txtcodigo_Leave);
             // 
             // label1
             // 
@@ -199,7 +200,7 @@
             this.txtobs.Location = new System.Drawing.Point(420, 9);
             this.txtobs.Multiline = true;
             this.txtobs.Name = "txtobs";
-            this.txtobs.Size = new System.Drawing.Size(339, 189);
+            this.txtobs.Size = new System.Drawing.Size(434, 189);
             this.txtobs.TabIndex = 8;
             // 
             // txtdatacadastro
@@ -232,48 +233,13 @@
             this.vencimento});
             this.Grid.Location = new System.Drawing.Point(15, 223);
             this.Grid.Name = "Grid";
-            this.Grid.Size = new System.Drawing.Size(744, 209);
+            this.Grid.Size = new System.Drawing.Size(839, 209);
             this.Grid.TabIndex = 24;
             this.Grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellDoubleClick);
             // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // EBC
-            // 
-            this.EBC.HeaderText = "EBC";
-            this.EBC.Name = "EBC";
-            // 
-            // obs
-            // 
-            this.obs.HeaderText = "Observação";
-            this.obs.Name = "obs";
-            // 
-            // fabricação
-            // 
-            this.fabricação.HeaderText = "Data Fabricação";
-            this.fabricação.Name = "fabricação";
-            // 
-            // vencimento
-            // 
-            this.vencimento.HeaderText = "Data Vencimento";
-            this.vencimento.Name = "vencimento";
-            // 
             // btnsalvar
             // 
-            this.btnsalvar.Location = new System.Drawing.Point(188, 445);
+            this.btnsalvar.Location = new System.Drawing.Point(329, 445);
             this.btnsalvar.Name = "btnsalvar";
             this.btnsalvar.Size = new System.Drawing.Size(75, 23);
             this.btnsalvar.TabIndex = 9;
@@ -283,7 +249,7 @@
             // 
             // btnexclui
             // 
-            this.btnexclui.Location = new System.Drawing.Point(279, 445);
+            this.btnexclui.Location = new System.Drawing.Point(420, 445);
             this.btnexclui.Name = "btnexclui";
             this.btnexclui.Size = new System.Drawing.Size(75, 23);
             this.btnexclui.TabIndex = 26;
@@ -292,7 +258,7 @@
             // 
             // btnfecha
             // 
-            this.btnfecha.Location = new System.Drawing.Point(441, 445);
+            this.btnfecha.Location = new System.Drawing.Point(248, 445);
             this.btnfecha.Name = "btnfecha";
             this.btnfecha.Size = new System.Drawing.Size(75, 23);
             this.btnfecha.TabIndex = 27;
@@ -302,7 +268,7 @@
             // 
             // btndesfaz
             // 
-            this.btndesfaz.Location = new System.Drawing.Point(360, 445);
+            this.btndesfaz.Location = new System.Drawing.Point(501, 445);
             this.btndesfaz.Name = "btndesfaz";
             this.btndesfaz.Size = new System.Drawing.Size(75, 23);
             this.btndesfaz.TabIndex = 28;
@@ -310,11 +276,53 @@
             this.btndesfaz.UseVisualStyleBackColor = true;
             this.btndesfaz.Click += new System.EventHandler(this.btndesfaz_Click);
             // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.Width = 60;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 250;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            this.quantidade.Width = 80;
+            // 
+            // EBC
+            // 
+            this.EBC.HeaderText = "EBC";
+            this.EBC.Name = "EBC";
+            this.EBC.Width = 50;
+            // 
+            // obs
+            // 
+            this.obs.HeaderText = "Observação";
+            this.obs.Name = "obs";
+            this.obs.Width = 200;
+            // 
+            // fabricação
+            // 
+            this.fabricação.HeaderText = "Fabricação";
+            this.fabricação.Name = "fabricação";
+            this.fabricação.Width = 80;
+            // 
+            // vencimento
+            // 
+            this.vencimento.HeaderText = "Vencimento";
+            this.vencimento.Name = "vencimento";
+            this.vencimento.Width = 80;
+            // 
             // CadMalte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 480);
+            this.ClientSize = new System.Drawing.Size(866, 480);
             this.Controls.Add(this.btndesfaz);
             this.Controls.Add(this.btnfecha);
             this.Controls.Add(this.btnexclui);
@@ -373,6 +381,10 @@
         private System.Windows.Forms.MaskedTextBox txtdatacadastro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.Button btnsalvar;
+        private System.Windows.Forms.Button btnexclui;
+        private System.Windows.Forms.Button btnfecha;
+        private System.Windows.Forms.Button btndesfaz;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
@@ -380,9 +392,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn fabricação;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimento;
-        private System.Windows.Forms.Button btnsalvar;
-        private System.Windows.Forms.Button btnexclui;
-        private System.Windows.Forms.Button btnfecha;
-        private System.Windows.Forms.Button btndesfaz;
     }
 }

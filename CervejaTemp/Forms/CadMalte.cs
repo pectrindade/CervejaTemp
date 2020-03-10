@@ -18,6 +18,16 @@ namespace CervejaTemp.Forms
             InitializeComponent();
         }
 
+        private void CadMalte_Load(object sender, EventArgs e)
+        {
+            txtdatacadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtcodigo.Text = "0";
+
+            BuscaGrid();
+
+            txtnome.Focus();
+        }
+
         private void btnfecha_Click(object sender, EventArgs e)
         {
             Close();
@@ -33,13 +43,44 @@ namespace CervejaTemp.Forms
             }
         }
 
-        private void CadMalte_Load(object sender, EventArgs e)
+        private void txtcodigo_Leave(object sender, EventArgs e)
         {
-            BuscaGrid();
-
-
+            if (txtcodigo.Text.Trim() != "")
+            {
+                BuscaCodigo(int.Parse(txtcodigo.Text));
+            }
         }
 
+        private void BuscaCodigo(int codigo)
+        {
+
+            var dr = Classes.Mysql.Malte.Select(codigo);
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    txtcodigo.Text = dr.GetString(dr.GetOrdinal("CODMALTE"));
+                    txtdatacadastro.Text = dr.GetString(dr.GetOrdinal("DATAENTRADA"));
+                    txtnome.Text = dr.GetString(dr.GetOrdinal("NOME"));
+                    txtquantidade.Text = dr.GetString(dr.GetOrdinal("QUANTIDADE"));
+                    txtpreco.Text = dr.GetString(dr.GetOrdinal("VALOR"));
+                    txtdatafabricacao.Text = dr.GetString(dr.GetOrdinal("DATAFAB"));
+                    txtdatavencimento.Text = dr.GetString(dr.GetOrdinal("DATAVENC"));
+                    txtebc.Text = dr.GetString(dr.GetOrdinal("EBC"));
+                    txtobs.Text = dr.GetString(dr.GetOrdinal("OBS"));
+
+                }
+
+            }
+
+            dr.Close();
+            dr.Dispose();
+
+            txtnome.Focus();
+        }
+        
         private void BuscaGrid()
         {
 
@@ -83,12 +124,12 @@ namespace CervejaTemp.Forms
         {
             txtcodigo.Text = "0";
 
-            txtdatacadastro.Text = "__/__/____";
+            txtdatacadastro.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtnome.Text = "";
             txtquantidade.Text = "";
             txtpreco.Text = "";
-            txtdatafabricacao.Text = "__/__/____";
-            txtdatavencimento.Text = "__/__/____";
+            txtdatafabricacao.Text = ""; // "__/__/____";
+            txtdatavencimento.Text = ""; //"__/__/____";
             txtebc.Text = "";
             txtobs.Text = "";
 
@@ -136,6 +177,7 @@ namespace CervejaTemp.Forms
                     m.Update();
 
                 MessageBox.Show("Registro Gravado com Sucesso !");
+                BuscaGrid();
             }
             catch (Exception erro)
             {
@@ -228,12 +270,15 @@ namespace CervejaTemp.Forms
             try
             {
                 txtcodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
-                //txtnome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
+                BuscaCodigo(int.Parse(txtcodigo.Text));
+
             }
             catch
             {
 
             }
         }
+
+        
     }
 }

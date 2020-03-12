@@ -139,5 +139,26 @@ namespace CervejaTemp.Forms
                 tela.Show();
             }
         }
+
+        private void editMenu_Click(object sender, EventArgs e)
+        {
+
+            bool open = false;
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form is CadReceita)
+                {
+                    form.BringToFront();
+                    open = true;
+                }
+            }
+            if (!open)
+            {
+                Form tela = new CadReceita();
+                tela.MdiParent = this;
+                tela.Show();
+            }
+
+        }
     }
 }

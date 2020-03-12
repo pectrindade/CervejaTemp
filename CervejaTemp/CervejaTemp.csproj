@@ -101,6 +101,12 @@
     <Compile Include="Forms\CadMalte.Designer.cs">
       <DependentUpon>CadMalte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CadReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadReceita.Designer.cs">
+      <DependentUpon>CadReceita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CadUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadMalte.resx">
       <DependentUpon>CadMalte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadReceita.resx">
+      <DependentUpon>CadReceita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadUsuario.resx">
       <DependentUpon>CadUsuario.cs</DependentUpon>

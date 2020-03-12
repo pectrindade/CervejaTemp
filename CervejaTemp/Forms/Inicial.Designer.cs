@@ -99,28 +99,28 @@
             // MnCIMalte
             // 
             this.MnCIMalte.Name = "MnCIMalte";
-            this.MnCIMalte.Size = new System.Drawing.Size(180, 22);
+            this.MnCIMalte.Size = new System.Drawing.Size(125, 22);
             this.MnCIMalte.Text = "&Malte";
             this.MnCIMalte.Click += new System.EventHandler(this.MnCIMalte_Click);
             // 
             // MnCILupulo
             // 
             this.MnCILupulo.Name = "MnCILupulo";
-            this.MnCILupulo.Size = new System.Drawing.Size(180, 22);
+            this.MnCILupulo.Size = new System.Drawing.Size(125, 22);
             this.MnCILupulo.Text = "&Lúpulo";
             this.MnCILupulo.Click += new System.EventHandler(this.MnCILupulo_Click);
             // 
             // MnCIFermento
             // 
             this.MnCIFermento.Name = "MnCIFermento";
-            this.MnCIFermento.Size = new System.Drawing.Size(180, 22);
+            this.MnCIFermento.Size = new System.Drawing.Size(125, 22);
             this.MnCIFermento.Text = "&Fermento";
             this.MnCIFermento.Click += new System.EventHandler(this.MnCIFermento_Click);
             // 
             // MnCIAdjuntos
             // 
             this.MnCIAdjuntos.Name = "MnCIAdjuntos";
-            this.MnCIAdjuntos.Size = new System.Drawing.Size(180, 22);
+            this.MnCIAdjuntos.Size = new System.Drawing.Size(125, 22);
             this.MnCIAdjuntos.Text = "&Adjuntos";
             this.MnCIAdjuntos.Click += new System.EventHandler(this.MnCIAdjuntos_Click);
             // 
@@ -150,6 +150,7 @@
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(62, 20);
             this.editMenu.Text = "&Receitas";
+            this.editMenu.Click += new System.EventHandler(this.editMenu_Click);
             // 
             // viewMenu
             // 

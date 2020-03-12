@@ -19,7 +19,7 @@ namespace CervejaTemp.Forms
 
         private void CadFermento_Load(object sender, EventArgs e)
         {
-
+            BuscaFermento();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -57,8 +57,8 @@ namespace CervejaTemp.Forms
                     if (!dr.IsDBNull(dr.GetOrdinal("CODFERMENTO"))) { linhaDados[0] = dr.GetString(dr.GetOrdinal("CODFERMENTO")); }
                     if (!dr.IsDBNull(dr.GetOrdinal("NOME"))) { linhaDados[1] = dr.GetString(dr.GetOrdinal("NOME")); }
                     if (!dr.IsDBNull(dr.GetOrdinal("ESTILOFERMENTO"))) { linhaDados[2] = dr.GetString(dr.GetOrdinal("ESTILOFERMENTO")); }
-                    if (!dr.IsDBNull(dr.GetOrdinal("DATAVENC"))) { linhaDados[4] = dr.GetString(dr.GetOrdinal("DATAVENC")); }
-                    if (!dr.IsDBNull(dr.GetOrdinal("QUANTIDADEESTOQUE"))) { linhaDados[5] = dr.GetString(dr.GetOrdinal("QUANTIDADEESTOQUE")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("DATAVENC"))) { linhaDados[3] = dr.GetString(dr.GetOrdinal("DATAVENC")); }
+                    if (!dr.IsDBNull(dr.GetOrdinal("QUANTIDADEESTOQUE"))) { linhaDados[4] = dr.GetString(dr.GetOrdinal("QUANTIDADEESTOQUE")); }
 
                     Grid.Rows.Add(linhaDados);
                 }
@@ -79,8 +79,7 @@ namespace CervejaTemp.Forms
         {
             txtCodigo.Text = "0";
             txtNome.Text = "";
-            txtTipo.Text = "";
-            txtAlfaacido.Text = "";
+            txtEstilo.Text = "";
             txtdatavencimento.Text = "";
             txtQuantidade.Text = "";
 
@@ -95,15 +94,14 @@ namespace CervejaTemp.Forms
             var hoje = DateTime.Now;
             //codigo = int.Parse(txtCodigo.Text.Trim());
             var Nome = txtNome.Text.Trim();
-            var Tipo = txtTipo.Text.Trim();
-            var AlfaAcido = txtAlfaacido.Text.Trim();
+            var Tipo = txtEstilo.Text.Trim();
             var vencimento = txtdatavencimento.Text.Trim();
             var Quantidade = txtQuantidade.Text.Trim();
 
 
             try
             {
-                var m = new Classes.Mysql.Fermento(codigo, Nome, Tipo, AlfaAcido, vencimento, Quantidade);
+                var m = new Classes.Mysql.Fermento(codigo, Nome, Tipo, vencimento, Quantidade);
                 if (novo)
                     m.Insert();
                 else
@@ -143,6 +141,9 @@ namespace CervejaTemp.Forms
             {
                 txtCodigo.Text = Grid.Rows[RowsIndex].Cells[0].Value.ToString();
                 txtNome.Text = Grid.Rows[RowsIndex].Cells[1].Value.ToString();
+                txtEstilo.Text = Grid.Rows[RowsIndex].Cells[2].Value.ToString();
+                txtdatavencimento.Text = Grid.Rows[RowsIndex].Cells[3].Value.ToString();
+                txtQuantidade.Text = Grid.Rows[RowsIndex].Cells[4].Value.ToString();
             }
             catch
             {

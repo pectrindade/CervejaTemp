@@ -34,15 +34,15 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estilo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEstilo = new System.Windows.Forms.TextBox();
@@ -71,6 +71,7 @@
             this.btnDesfaz.TabIndex = 183;
             this.btnDesfaz.Text = "Desfaz";
             this.btnDesfaz.UseVisualStyleBackColor = true;
+            this.btnDesfaz.Click += new System.EventHandler(this.btnDesfaz_Click);
             // 
             // BtnExcluir
             // 
@@ -88,9 +89,10 @@
             this.btnSalvar.Location = new System.Drawing.Point(289, 315);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(59, 23);
-            this.btnSalvar.TabIndex = 181;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnFechar
             // 
@@ -101,6 +103,7 @@
             this.btnFechar.TabIndex = 185;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // Grid
             // 
@@ -116,6 +119,34 @@
             this.Grid.Size = new System.Drawing.Size(749, 199);
             this.Grid.TabIndex = 189;
             this.Grid.TabStop = false;
+            this.Grid.DoubleClick += new System.EventHandler(this.Grid_DoubleClick);
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.Width = 220;
+            // 
+            // estilo
+            // 
+            this.estilo.HeaderText = "Estilo";
+            this.estilo.Name = "estilo";
+            this.estilo.Width = 180;
+            // 
+            // vencimento
+            // 
+            this.vencimento.HeaderText = "Vencimento";
+            this.vencimento.Name = "vencimento";
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
             // 
             // txtCodigo
             // 
@@ -154,33 +185,6 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 188;
             this.label3.Text = "Nome";
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.Width = 220;
-            // 
-            // estilo
-            // 
-            this.estilo.HeaderText = "Estilo";
-            this.estilo.Name = "estilo";
-            this.estilo.Width = 180;
-            // 
-            // vencimento
-            // 
-            this.vencimento.HeaderText = "Vencimento";
-            this.vencimento.Name = "vencimento";
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
             // 
             // txtQuantidade
             // 
@@ -235,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 350);
+            this.ClientSize = new System.Drawing.Size(773, 345);
             this.ControlBox = false;
             this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.label5);
@@ -256,7 +260,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CadFermento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadFermento";
+            this.Text = "Fermento";
             this.Load += new System.EventHandler(this.CadFermento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);

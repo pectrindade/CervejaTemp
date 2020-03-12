@@ -48,10 +48,6 @@
             this.txtdatacadastro = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.btnsalvar = new System.Windows.Forms.Button();
-            this.btnexclui = new System.Windows.Forms.Button();
-            this.btnfecha = new System.Windows.Forms.Button();
-            this.btndesfaz = new System.Windows.Forms.Button();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +55,10 @@
             this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fabricação = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnsalvar = new System.Windows.Forms.Button();
+            this.btnexclui = new System.Windows.Forms.Button();
+            this.btnfecha = new System.Windows.Forms.Button();
+            this.btndesfaz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,45 +237,6 @@
             this.Grid.TabIndex = 24;
             this.Grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellDoubleClick);
             // 
-            // btnsalvar
-            // 
-            this.btnsalvar.Location = new System.Drawing.Point(329, 445);
-            this.btnsalvar.Name = "btnsalvar";
-            this.btnsalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnsalvar.TabIndex = 9;
-            this.btnsalvar.Text = "Salvar";
-            this.btnsalvar.UseVisualStyleBackColor = true;
-            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
-            // 
-            // btnexclui
-            // 
-            this.btnexclui.Location = new System.Drawing.Point(420, 445);
-            this.btnexclui.Name = "btnexclui";
-            this.btnexclui.Size = new System.Drawing.Size(75, 23);
-            this.btnexclui.TabIndex = 26;
-            this.btnexclui.Text = "Excluir";
-            this.btnexclui.UseVisualStyleBackColor = true;
-            // 
-            // btnfecha
-            // 
-            this.btnfecha.Location = new System.Drawing.Point(248, 445);
-            this.btnfecha.Name = "btnfecha";
-            this.btnfecha.Size = new System.Drawing.Size(75, 23);
-            this.btnfecha.TabIndex = 27;
-            this.btnfecha.Text = "Fechar";
-            this.btnfecha.UseVisualStyleBackColor = true;
-            this.btnfecha.Click += new System.EventHandler(this.btnfecha_Click);
-            // 
-            // btndesfaz
-            // 
-            this.btndesfaz.Location = new System.Drawing.Point(501, 445);
-            this.btndesfaz.Name = "btndesfaz";
-            this.btndesfaz.Size = new System.Drawing.Size(75, 23);
-            this.btndesfaz.TabIndex = 28;
-            this.btndesfaz.Text = "Desfaz";
-            this.btndesfaz.UseVisualStyleBackColor = true;
-            this.btndesfaz.Click += new System.EventHandler(this.btndesfaz_Click);
-            // 
             // codigo
             // 
             this.codigo.HeaderText = "Código";
@@ -318,6 +279,45 @@
             this.vencimento.Name = "vencimento";
             this.vencimento.Width = 80;
             // 
+            // btnsalvar
+            // 
+            this.btnsalvar.Location = new System.Drawing.Point(329, 445);
+            this.btnsalvar.Name = "btnsalvar";
+            this.btnsalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnsalvar.TabIndex = 9;
+            this.btnsalvar.Text = "Salvar";
+            this.btnsalvar.UseVisualStyleBackColor = true;
+            this.btnsalvar.Click += new System.EventHandler(this.btnsalvar_Click);
+            // 
+            // btnexclui
+            // 
+            this.btnexclui.Location = new System.Drawing.Point(420, 445);
+            this.btnexclui.Name = "btnexclui";
+            this.btnexclui.Size = new System.Drawing.Size(75, 23);
+            this.btnexclui.TabIndex = 26;
+            this.btnexclui.Text = "Excluir";
+            this.btnexclui.UseVisualStyleBackColor = true;
+            // 
+            // btnfecha
+            // 
+            this.btnfecha.Location = new System.Drawing.Point(248, 445);
+            this.btnfecha.Name = "btnfecha";
+            this.btnfecha.Size = new System.Drawing.Size(75, 23);
+            this.btnfecha.TabIndex = 27;
+            this.btnfecha.Text = "Fechar";
+            this.btnfecha.UseVisualStyleBackColor = true;
+            this.btnfecha.Click += new System.EventHandler(this.btnfecha_Click);
+            // 
+            // btndesfaz
+            // 
+            this.btndesfaz.Location = new System.Drawing.Point(501, 445);
+            this.btndesfaz.Name = "btndesfaz";
+            this.btndesfaz.Size = new System.Drawing.Size(75, 23);
+            this.btndesfaz.TabIndex = 28;
+            this.btndesfaz.Text = "Desfaz";
+            this.btndesfaz.UseVisualStyleBackColor = true;
+            this.btndesfaz.Click += new System.EventHandler(this.btndesfaz_Click);
+            // 
             // CadMalte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +350,7 @@
             this.KeyPreview = true;
             this.Name = "CadMalte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadMalte";
+            this.Text = "Malte";
             this.Load += new System.EventHandler(this.CadMalte_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CadMalte_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();

@@ -17,19 +17,17 @@ namespace CervejaTemp.Forms
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnfecha_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        private void btnsalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
     }
 }

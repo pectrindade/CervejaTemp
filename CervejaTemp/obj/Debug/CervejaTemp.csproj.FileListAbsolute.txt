@@ -57,3 +57,4 @@ D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.csproj.CopyComp
 D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.exe
 D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.pdb
 E:\Projetos\c#\Win Form\CervejaTemp\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadReceita.resources
+D:\Projetos\c#\Winform\Cerveja\CervejaTemp\obj\Debug\CervejaTemp.Forms.CadReceita.resources
